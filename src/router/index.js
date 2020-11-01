@@ -1,27 +1,48 @@
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter from "vue-router";
+import routes from "../router/routes";
 
-Vue.use(VueRouter)
-
-const routes = [
-  {
-    path: '/',
-    name: 'Home',
-    component: Home
-  },
-  {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes
-})
+  mode: "history",
+  scrollBehavior() {
+    return {
+      x: 0,
+      y: 0,
+    };
+  },
+  routes,
+});
 
-export default router
+router.beforeResolve((to, from, next) => {
+  if (to.name) {
+    NProgress.start();
+  }
+  next();
+});
+
+router.afterEach((to, from) => {
+  NProgress.done();
+});
+
+// Router middleware
+router.beforeEach((to, from, next) => {
+  if (to.matched.some((record) => record.meta.requireGuest)) {
+    if (!localStorage.getItem("token")) {
+      next();
+    } else {
+      next({ name: "Dashboard" });
+    }
+  } else if (to.matched.some((record) => record.meta.requireAuth)) {
+    if (localStorage.getItem("token")) {
+      next();
+    } else {
+      next({ name: "Home" });
+    }
+  } else {
+    next();
+  }
+});
+
+export default router;

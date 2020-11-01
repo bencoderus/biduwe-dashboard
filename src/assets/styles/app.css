@@ -1,0 +1,13 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.page-title {
+  @apply mb-6 text-2xl font-bold;
+}
+
+.btn {
+  @apply text-white px-5 py-3 rounded-md;
+}
