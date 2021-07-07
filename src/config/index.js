@@ -13,10 +13,17 @@ export default {
     facebook: "bencoderus",
   },
 
+  // api: {
+  //   url: "https://biduwe.test",
+  //   articles_image_path: "https://biduwe.test/storage/posts",
+  //   projects_image_path: "https://biduwe.test/storage/projects",
+  //   thumbnails_path: "https://biduwe.test/storage/thumbnails",
+  // },
+
   api: {
-    url: "https://biduwe.test",
-    articles_image_path: "https://biduwe.test/storage/posts",
-    projects_image_path: "https://biduwe.test/storage/projects",
-    thumbnails_path: "https://biduwe.test/storage/thumbnails",
+    url: "https://cms.biduwe.com",
+    articles_image_path: "https://cms.biduwe.com/storage/posts",
+    projects_image_path: "https://cms.biduwe.com/storage/projects",
+    thumbnails_path: "https://cms.biduwe.com/storage/thumbnails",
   },
 };

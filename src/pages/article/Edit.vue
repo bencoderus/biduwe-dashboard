@@ -70,6 +70,7 @@
 
         <div class="flex justify-center">
           <button
+            :disabled="sending"
             class="bg-blue-700 px-12 py-4 rounded-full text-white hover:bg-blue-900"
           >
             Save Article
@@ -114,6 +115,9 @@ export default {
   },
   methods: {
     async save() {
+      this.sending = true;
+      NProgress.start();
+
       const request = new RequestService();
       const form = document.querySelector("#newform");
       const payload = new FormData(form);
@@ -125,6 +129,7 @@ export default {
       );
 
       NProgress.done();
+      this.sending = false;
 
       if (!response.status) {
         return this.$toast.warning(response.message);

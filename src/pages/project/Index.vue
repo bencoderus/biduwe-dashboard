@@ -2,28 +2,11 @@
   <div>
     <Navbar />
     <DashboardLayout>
-      <PageTitle title="Projects"></PageTitle>
-      <div class="my-6">
-        <span class="flex justify-end">
-          <router-link :to="{ name: 'ProjectNew' }">
-            <span class="bg-blue-700 text-sm text-white px-6 py-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="text-white w-3 inline"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              New project</span
-            >
-          </router-link>
-        </span>
-      </div>
+      <PageTitle
+        title="Projects"
+        routeTitle="New Project"
+        routeName="ProjectNew"
+      ></PageTitle>
       <table class="table-auto">
         <thead>
           <tr class="bg-gray-100">
@@ -63,7 +46,7 @@
             </td>
             <td class="border px-4 py-2">
               <router-link
-                :to="{ name: 'projectShow', params: { slug: project.slug } }"
+                :to="{ name: 'ProjectShow', params: { slug: project.slug } }"
               >
                 <span class="mr-2 mt-2 bg-blue-800 text-white px-3 py-2 text-xs"
                   >View</span
@@ -71,7 +54,7 @@
               </router-link>
 
               <router-link
-                :to="{ name: 'projectEdit', params: { slug: project.slug } }"
+                :to="{ name: 'ProjectEdit', params: { slug: project.slug } }"
               >
                 <span class="mr-2 mt-2 bg-blue-800 text-white px-3 py-2 text-xs"
                   >Edit</span

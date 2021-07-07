@@ -26,15 +26,14 @@
               <router-link
                 :to="{ name: 'MessageShow', params: { id: message.id } }"
               >
-                <span
-                  class="m-2 bg-blue-800 text-white px-4 py-2 rounded-md text-xs"
+                <span class="m-2 bg-blue-800 text-white px-2 py-2 text-xs"
                   >View</span
                 >
               </router-link>
               <button
                 @click="deleteRecord(message.id, index)"
                 :disabled="sending"
-                class="m-2 bg-red-600 text-white py-2 px-4 rounded-md text-xs"
+                class="m-2 bg-red-600 text-white py-2 px-4 text-xs"
               >
                 Delete
               </button>

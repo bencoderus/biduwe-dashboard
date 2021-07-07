@@ -26,7 +26,7 @@
           </div>
         </router-link>
 
-        <a href="#">
+        <router-link :to="{ name: 'Project' }">
           <div class="px-8 mt-2 py-4">
             <span class="hover:text-blue-700"> Works </span>
             <span class="float-right">
@@ -46,7 +46,7 @@
               </svg>
             </span>
           </div>
-        </a>
+        </router-link>
 
         <router-link :to="{ name: 'Article' }">
           <div class="px-8 mt-2 py-4">

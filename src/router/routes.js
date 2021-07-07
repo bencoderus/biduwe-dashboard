@@ -1,19 +1,20 @@
-import Home from "../pages/Home.vue";
-import Dashboard from "../pages/Dashboard.vue";
-import Playground from "../pages/Playground.vue";
+const Home = () => import("../pages/Home.vue");
+const Dashboard = () => import("../pages/Dashboard.vue");
+const Playground = () => import("../pages/Playground.vue");
+const PageNotFound = () => import("../pages/PageNotFound.vue");
 
-import MessageIndex from "../pages/message/Index.vue";
-import MessageShow from "../pages/message/Show.vue";
+const MessageIndex = () => import("../pages/message/Index.vue");
+const MessageShow = () => import("../pages/message/Show.vue");
 
-import ArticleIndex from "../pages/article/Index.vue";
-import ArticleNew from "../pages/article/New.vue";
-import ArticleShow from "../pages/article/Show.vue";
-import ArticleEdit from "../pages/article/Edit.vue";
+const ArticleIndex = () => import("../pages/article/Index.vue");
+const ArticleNew = () => import("../pages/article/New.vue");
+const ArticleShow = () => import("../pages/article/Show.vue");
+const ArticleEdit = () => import("../pages/article/Edit.vue");
 
-import ProjectIndex from "../pages/project/Index.vue";
-import ProjectNew from "../pages/project/New.vue";
-import ProjectShow from "../pages/project/Show.vue";
-import ProjectEdit from "../pages/project/Edit.vue";
+const ProjectIndex = () => import("../pages/project/Index.vue");
+const ProjectNew = () => import("../pages/project/New.vue");
+const ProjectShow = () => import("../pages/project/Show.vue");
+const ProjectEdit = () => import("../pages/project/Edit.vue");
 
 export default [
   {
@@ -120,6 +121,6 @@ export default [
   {
     path: "*",
     name: "NotFound",
-    component: Home,
+    component: PageNotFound,
   },
 ];

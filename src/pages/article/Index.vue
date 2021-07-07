@@ -2,28 +2,12 @@
   <div>
     <Navbar />
     <DashboardLayout>
-      <PageTitle title="Articles"></PageTitle>
-      <div class="my-6">
-        <span class="flex justify-end">
-          <router-link :to="{ name: 'ArticleNew' }">
-            <span class="bg-blue-700 text-sm text-white px-6 py-3">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 20 20"
-                fill="currentColor"
-                class="text-white w-3 inline"
-              >
-                <path
-                  fill-rule="evenodd"
-                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v2H7a1 1 0 100 2h2v2a1 1 0 102 0v-2h2a1 1 0 100-2h-2V7z"
-                  clip-rule="evenodd"
-                />
-              </svg>
-              New Article</span
-            >
-          </router-link>
-        </span>
-      </div>
+      <PageTitle
+        title="Articles"
+        routeTitle="New Article"
+        routeName="ArticleNew"
+      >
+      </PageTitle>
       <table class="table-auto">
         <thead>
           <tr class="bg-gray-100">
